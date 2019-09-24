@@ -1,0 +1,6 @@
+-- VISTA DE LOS PACIENTES ACTIVOS --
+select pacientes.pac_apaterno, pacientes.pac_amaterno, pacientes.pac_nombre, ingresos.ing_diagnostico, ingresos.ing_fecha
+from pacientes, ingresos
+where ingresos.ing_alta = 0
+AND ingresos.estatus='A'
+AND ingresos.id_paciente = pacientes.id_paciente
