@@ -370,38 +370,28 @@ include'../conexion.php';
           
         <div class="table-responsive table--no-card m-b-30">
                               <table class="table table-borderless table-striped table-earning">
-                                  <thead>PACIENTES HOSPITALIZADOS
+                                  <thead>Habitaciones
                                       <tr>
-                                          <th>Folio Ingreso</th>
-                                          <th>Apellido Paterno</th>
-                                          <th>Apellido Materno</th>
-                                          <th>Nombre</th>
-                                          <th>Diagnostico</th>
-                                          <th>Fecha ingreso</th>
+                                          <th>Cuarto</th>
+                                          <th>Estado</th>
+                                          <th>Fecha Ocupacion</th>
                                           
                                       </tr>
                                   </thead>
                                   <tbody>
                                     <?php
-                                    $public = "select ingresos.id_ingreso, pacientes.pac_apaterno, pacientes.pac_amaterno, pacientes.pac_nombre, ingresos.ing_diagnostico, ingresos.ing_fecha from pacientes, ingresos where ingresos.ing_alta = 0 AND ingresos.estatus='A' AND ingresos.id_paciente = pacientes.id_paciente order by ingresos.ing_fecha asc";
+                                    $public = "select habitaciones.hab_nombre, habitaciones.hab_estado, habitaciones.hab_fecha_ocupacion FROM habitaciones WHERE habitaciones.estatus='A'";
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_ing    = $fila['id_ingreso'];
-                                      $pac_apa   = $fila['pac_apaterno'];
-                                      $pac_ama   = $fila['pac_amaterno'];
-                                      $pac_nom   = $fila['pac_nombre'];
-                                      $ing_diag  = $fila['ing_diagnostico'];
-                                      $ing_fech  = $fila['ing_fecha'];
-
+                                      $hab_nom    = $fila['hab_nombre'];
+                                      $hab_edo   = $fila['hab_estado'];
+                                      $hab_fecha   = $fila['hab_fecha_ocupacion'];
                                      ?>
                                      <tr>
-                                         <td><?php echo $id_ing ?></td>
-                                         <td><?php echo $pac_apa ?></td>
-                                         <td><?php echo $pac_ama ?></td>
-                                         <td><?php echo $pac_nom ?></td>
-                                         <td><?php echo $ing_diag ?></td>
-                                         <td><?php echo $ing_fech ?></td>
+                                         <td><?php echo $hab_nom ?></td>
+                                         <td><?php echo $hab_edo ?></td>
+                                         <td><?php echo $hab_fecha ?></td>
                                          <td class="text-right">
                                            <!-- Modal start 
                                            <div class="table-data-feature">
