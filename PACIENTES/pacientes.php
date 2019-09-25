@@ -376,9 +376,9 @@ include'../conexion.php';
                                           <th>Nombre</th>
                                           <th>Apellido P</th>
                                           <th>Apellido M</th>
-                                          <th class="text-right">Diagnostico</th>
-                                          <th class="text-right">Fecha ingreso</th>
-                                          <th class="text-right">Acción</th>
+                                          <th>Diagnostico</th>
+                                          <th>Fecha ingreso</th>
+                                          <th>Acción</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -387,12 +387,12 @@ include'../conexion.php';
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_pac       = $fila['id_paciente'];
-                                      $pac_nom            = $fila['pac_nombre'];
+                                      $id_pac    = $fila['id_paciente'];
+                                      $pac_nom   = $fila['pac_nombre'];
                                       $pac_apa   = $fila['pac_apaterno'];
                                       $pac_ama   = $fila['pac_amaterno'];
-                                      $ing_diag   = $fila['ing_diagnostico'];
-                                      $ing_fech   = $fila['ing_fecha'];
+                                      $ing_diag  = $fila['ing_diagnostico'];
+                                      $ing_fech  = $fila['ing_fecha'];
 
                                      ?>
                                      <tr>
