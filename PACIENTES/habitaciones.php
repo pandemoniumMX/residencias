@@ -97,10 +97,11 @@ include'../conexion.php';
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      <!-- Heading -->
+      <!-- Heading 
       <div class="sidebar-heading">
         Addons
       </div>
+      -->
 
       <!-- Nav Item - Pages Collapse Menu 
       <li class="nav-item active">
@@ -123,24 +124,19 @@ include'../conexion.php';
       </li>
       -->
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
+<!-- ELEMENTOS DE SIDE BAR -->
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="pacientes.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>Pacientes</span></a>
       </li>
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="habitaciones.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Ejemplo 1</span></a>
+          <span>Habitaciones</span></a>
       </li>
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -154,7 +150,27 @@ include'../conexion.php';
           <i class="fas fa-fw fa-table"></i>
           <span>Ejemplo 3</span></a>
       </li>
+ <!-- Divider -->
+      <hr class="sidebar-divider">
 
+      <!-- Heading  -->
+
+      <div class="sidebar-heading">
+        Accesos Directos
+      </div>
+            <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Correo</span></a>
+      </li>
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Sistema</span></a>
+      </li>
+     
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
