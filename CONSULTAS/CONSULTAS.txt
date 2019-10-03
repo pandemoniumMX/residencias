@@ -10,3 +10,8 @@ order by ingresos.ing_fecha asc
 -- VISTA CUARTOS --
 
 select habitaciones.hab_nombre, habitaciones.hab_estado, habitaciones.hab_fecha_ocupacion FROM habitaciones WHERE habitaciones.estatus='A'
+
+-- SELECCIONAR FECHA BONITA --
+
+
+select hab_nombre, hab_estado, DATE_FORMAT(hab_fecha_ocupacion, '%d/%m/%Y') AS FECHA from habitaciones where hab_estado="Ocupado"
