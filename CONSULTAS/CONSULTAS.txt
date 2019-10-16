@@ -15,3 +15,15 @@ select habitaciones.hab_nombre, habitaciones.hab_estado, habitaciones.hab_fecha_
 
 
 select hab_nombre, hab_estado, DATE_FORMAT(hab_fecha_ocupacion, '%d/%m/%Y') AS FECHA from habitaciones where hab_estado="Ocupado"
+
+
+-- SELECCIONAR EMPLEADOS --
+SELECT empleados.emp_numero_empleado, empleados.emp_apaterno, empleados.emp_amaterno, empleados.emp_nombre, DATE_FORMAT(empleados.emp_fecha_nacimiento, '%d/%m/%Y') AS fechadenacimiento, departamentos.dep_nombre 
+
+from empleados, departamentos 
+
+where empleados.estatus="A"
+
+AND empleados.id_departamento = departamentos.id_departamento
+
+order by empleados.emp_fecha_nacimiento desc

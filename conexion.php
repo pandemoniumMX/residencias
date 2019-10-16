@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "hospiten";
 
-//$dbname = md5("electronicax");
+//$dbname = md5("");
 
 // Crear connection
 $conn = @mysqli_connect($servername, $username, $password, $dbname);
