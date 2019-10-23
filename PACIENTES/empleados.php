@@ -134,11 +134,11 @@ include'../conexion.php';
           <i class="fas fa-fw fa-table"></i>
           <span>Habitaciones</span></a>
       </li>
-      <!-- Nav Item - Tables -->
+      <!-- empleados -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="empleados.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Ejemplo 2</span></a>
+          <span>Empleados</span></a>
       </li>
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -384,38 +384,38 @@ include'../conexion.php';
           
         <div class="table-responsive table--no-card m-b-30">
                               <table class="table table-borderless table-striped table-earning">
-                                  <thead>PACIENTES HOSPITALIZADOS
+                                  <thead>LISTA DE COLABORADORES
                                       <tr>
-                                          <th>Folio Ingreso</th>
+                                          <th>No. Empleado</th>
                                           <th>Apellido Paterno</th>
                                           <th>Apellido Materno</th>
                                           <th>Nombre</th>
-                                          <th>Diagnostico</th>
-                                          <th>Fecha ingreso</th>
+                                          <th>Fecha de nacimiento</th>
+                                          <th>Departamento</th>
                                           
                                       </tr>
                                   </thead>
                                   <tbody>
                                     <?php
-                                    $public = "select ingresos.id_ingreso, pacientes.pac_apaterno, pacientes.pac_amaterno, pacientes.pac_nombre, ingresos.ing_diagnostico, ingresos.ing_fecha from pacientes, ingresos where ingresos.ing_alta = 0 AND ingresos.estatus='A' AND ingresos.id_paciente = pacientes.id_paciente order by ingresos.ing_fecha asc";
+                                    $public = "select * FROM hospiten.view_empleados";
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_ing    = $fila['id_ingreso'];
-                                      $pac_apa   = $fila['pac_apaterno'];
-                                      $pac_ama   = $fila['pac_amaterno'];
-                                      $pac_nom   = $fila['pac_nombre'];
-                                      $ing_diag  = $fila['ing_diagnostico'];
-                                      $ing_fech  = $fila['ing_fecha'];
+                                      $num_emp    = $fila['emp_numero_empleado'];
+                                      $emp_apa   = $fila['emp_apaterno'];
+                                      $emp_ama   = $fila['emp_amaterno'];
+                                      $emp_nom   = $fila['emp_nombre'];
+                                      $emp_fecha  = $fila['fechadenacimiento'];
+                                      $emp_dpto  = $fila['dep_nombre'];
 
                                      ?>
                                      <tr>
-                                         <td><?php echo $id_ing ?></td>
-                                         <td><?php echo $pac_apa ?></td>
-                                         <td><?php echo $pac_ama ?></td>
-                                         <td><?php echo $pac_nom ?></td>
-                                         <td><?php echo $ing_diag ?></td>
-                                         <td><?php echo $ing_fech ?></td>
+                                         <td><?php echo $num_emp ?></td>
+                                         <td><?php echo $emp_apa ?></td>
+                                         <td><?php echo $emp_ama ?></td>
+                                         <td><?php echo $emp_nom ?></td>
+                                         <td><?php echo $emp_fecha ?></td>
+                                         <td><?php echo $emp_dpto ?></td>
                                          <td class="text-right">
                                            <!-- Modal start 
                                            <div class="table-data-feature">

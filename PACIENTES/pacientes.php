@@ -134,11 +134,11 @@ include'../conexion.php';
           <i class="fas fa-fw fa-table"></i>
           <span>Habitaciones</span></a>
       </li>
-      <!-- Nav Item - Tables -->
+ <!-- empleados -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="empleados.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Ejemplo 2</span></a>
+          <span>Empleados</span></a>
       </li>
       <!-- Nav Item - Tables -->
       <li class="nav-item">
