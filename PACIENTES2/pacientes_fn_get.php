@@ -14,7 +14,7 @@ if(isset($_POST['id'])){
  }
 */
 
-  $consulta = "SELECT * pacientes where id_paciente=$id;";
+  $consulta = "SELECT * from pacientes where id_paciente=$id;";
   $resultado = $conn->query($consulta);
   if($resultado->num_rows > 0){
    while($row = $resultado->fetch_assoc()) {

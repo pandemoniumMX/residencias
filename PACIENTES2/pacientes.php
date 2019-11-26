@@ -381,8 +381,8 @@ include'../conexion.php';
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-          
+        <button class="btn btn-primary" onclick='nuevo_pac()' >Nuevo paciente <i class='fa fa-edit'></i></button>
+        
         <div class="table-responsive table--no-card m-b-30">
                               <table class="table table-borderless table-striped table-earning">
                                   <thead>PACIENTES HOSPITALIZADOS
@@ -492,6 +492,52 @@ include'../conexion.php';
   <script src="../js/sweetalert2.all.min.js"></script>
 
 
+  <script type="text/javascript">
+  //ventana de nuevo cliente
+    function nuevo_pac(){
+   swal({
+   title: 'Nuevo Paciente ',
+   html:
+   '<div class="col-lg-12"> <form action="paciente_fn_insert.php" method="post" name="data">'+
+   '<input type="hidden" id="id_pac" name="id_pac"  readonly required  class="form-control"></br>' +
+
+   '<label>Nombre</label></br>'+
+   '<input  type="text" id="pac_nombre"  name="pac_nombre"  class="form-control border-input maxlength="25" required>' +
+
+   '<label>Apellido Paterno</label></br>'+
+   '<input  type="text" id="pac_apaterno"  name="pac_apaterno"  class="form-control border-input maxlength="25" required>' +
+
+   '<label>Apellido Materno</label></br>'+
+   '<input  type="text" id="pac_amaterno"  name="pac_amaterno"  class="form-control border-input maxlength="25" required>' +
+
+   '<label>Fecha nacimiento</label></br>'+
+   '<input  type="text" id="pac_fecha_nacimiento"  name="pac_fecha_nacimiento"  class="form-control border-input maxlength="25" required>' +
+
+   '<label>Teléfono</label></br>'+
+   '<input  type="number" id="pac_telefono"  name="pac_telefono"  class="form-control border-input maxlength="25" required>' +
+
+   '<label>Estatus</label></br>'+
+   '<select class="dropdown-toggle btn btn-info" type="button" required textalign="center" name="estatus" id="estatus"><option disabled selected>Selecciona estado</option><option value="A" >A</option><option value="B">B</option></select></br></br>'+   
+
+
+
+    '<button type="submit"  class="btn btn-success btn-lg btn-block">Registrar</button>'+
+   '</form></div>',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: '</form> Actualizar solicitud',
+   cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+   showConfirmButton: false,
+   focusConfirm: false,
+   buttonsStyling: false,
+   reverseButtons: true,
+   allowOutsideClick: false
+})
+};
+  </script>
+
+
 
   <script type="text/javascript">
   //ventana de nuevo cliente
@@ -500,7 +546,7 @@ include'../conexion.php';
    title: 'Editar Paciente ',
    html:
    '<div class="col-lg-12"> <form action="publicacion_update_fn.php" method="post" name="data">'+
-   '<input type="text" id="id_pac" name="id_pac"  readonly required  class="form-control"></br>' +
+   '<input type="hidden" id="id_pac" name="id_pac"  readonly required  class="form-control"></br>' +
 
    '<label>Nombre</label></br>'+
    '<input  type="text" id="pac_nombre"  name="pac_nombre"  class="form-control border-input maxlength="25" required>' +
